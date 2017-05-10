@@ -1,0 +1,23 @@
+.article{
+	margin:0;
+	padding:0;
+
+}
+#list{
+	width:1164px;
+	margin:0 auto;
+}
+#list li{
+	width:280px;
+	float:left;
+	padding:5px;
+	background:#F9F9E9;
+}
+.div{
+	padding: 5px;
+	margin-bottom: 10px;
+}  
+.img{
+	width: 270px;
+	display: block;
+}  

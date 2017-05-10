@@ -1,0 +1,144 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>自主设计</title>
+		<link type="text/css" rel="stylesheet" href="../css/all.css">	
+		<link type="text/css" rel="stylesheet" href="../css/zizhusheji.css">
+	</head>
+	<body>
+
+		<div class="header">
+			<div class="header-top">
+					<img src="../photo/dizhi.png">
+					<span id="s1">长春</span>
+					<span id="s2">[切换]</span>
+					<ul>
+						
+						<li><a href="html/dl.html">拍照测量</a></li>
+						<li><a href="html/zc.html">光照模拟</a></li>
+						<li><a href="html/zc.html">VR模拟</a></li>
+						<li><a href="html/dl.html">登录</a></li>
+						<li><a href="html/zc.html">注册</a></li>
+					</ul>
+			</div>
+			<div class="head-bottom">
+				<img src="../photo/logo.png"></img>
+				<span id="s22"><input type="text"></input></span>
+			</div>
+		<div class="nav">
+			<ul>
+				<li id="li1"><a href="../index.html" id="a1">首页</a></li>
+				<li><a href="../html/zizhusheji.html">自主设计</a></li>
+				<li><a href="../html/zhanshi.html">作品展示</a></li>
+				<li><a href="javascript:void(0)">施工监控</a></li>
+				<li><a href="../html/gaizao.html">旧物改造</a></li>
+				<li><a href="../html/baozhang.html">装修保障</a></li>
+	
+			</ul>
+		</div>
+		<div class="ce-nav">
+			
+			<ul>
+				<li class="li1">
+					<a href="javascript:void(0)">隐藏/展开</a>
+				</li>
+				<li class="li2">
+					<a href="javascript:void(0)">扫码关注</a>	
+				</li>
+				<li class="li3">
+					<a href="javascript:void(0)">联系我们</a>
+				</li>
+				<li class="li4">
+					<a href="#">疑问解答</a>
+				</li>
+				<li class="li5">
+					<a href="#">返回顶部</a>
+				</li>
+			</ul>
+		</div>
+		<div class="zizhusheji">
+			<h1>自己的房屋自己作主！</h1>
+			<div class="bj" id="rotatey1"></div>
+			<p>根据不同角度选择不同方位通过立体感来观察家居的位置设计！</p>
+			<ul class="anniu">
+				<li><a onClick="rotateYDIV()">水平旋转</a></li>
+				<li><a onClick="rotateXDIV()">垂直旋转</a></li>
+				<li><a onClick="rotateDIV()">水平翻转</a></li>
+			</ul>
+		</div>
+		<script>
+
+var x,y,n=0,yn=0,nx=0,ny=0,rotINT,rotYINT
+function rotateDIV()
+{
+x=document.getElementById("rotatey1")
+clearInterval(rotINT)
+rotINT=setInterval("startRotate()",10)
+}
+
+function startRotate()
+{
+n=n+1
+x.style.transform="rotate(" + n + "deg)"
+x.style.webkitTransform="rotate(" + n + "deg)"
+x.style.OTransform="rotate(" + n + "deg)"
+x.style.MozTransform="rotate(" + n + "deg)"
+if (n==180 || n==360)
+	{
+	clearInterval(rotINT)
+	if (n==360){n=0}
+	}
+}
+
+function rotateYDIV()
+{
+y=document.getElementById("rotatey1")
+clearInterval(rotYINT)
+rotYINT=setInterval("startYRotate()",10)
+}
+function startYRotate()
+{
+ny=ny+1
+y.style.transform="rotateY(" + ny + "deg)"
+y.style.webkitTransform="rotateY(" + ny + "deg)"
+y.style.OTransform="rotateY(" + ny + "deg)"
+y.style.MozTransform="rotateY(" + ny + "deg)"
+if (ny==180 || ny>=360)
+	{
+	clearInterval(rotYINT)
+	if (ny>=360){ny=0}
+	}
+}
+
+function rotateXDIV()
+{
+y=document.getElementById("rotatey1")
+clearInterval(rotYINT)
+rotYINT=setInterval("startXRotate()",10)
+}
+function startXRotate()
+{
+nx=nx+1
+y.style.transform="rotateX(" + nx + "deg)"
+y.style.webkitTransform="rotateX(" + nx + "deg)"
+y.style.OTransform="rotateX(" + nx + "deg)"
+y.style.MozTransform="rotateX(" + nx + "deg)"
+if (nx==180 || nx>=360)
+	{
+	clearInterval(rotYINT)
+	if (nx>=360){nx=0}
+	}
+}
+
+
+</script>
+		<div class="footer">
+			<div class="fbleft">@2017梦想家</div>
+			<div class="back"><a href="">Back to top</a><span>↑</span>
+			</div>
+		</div>
+		<script src="../js/jquery-3.2.0.min.js"></script>
+		<script type="text/javascript" src="../js/all.js"></script>
+	</body>
+</html>

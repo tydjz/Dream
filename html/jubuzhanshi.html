@@ -1,0 +1,143 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>装修保障</title>
+		<link type="text/css" rel="stylesheet" href="../css/all.css">	
+		<link type="text/css" rel="stylesheet" href="../css/jubu.css">
+		<script src="ajax.js" type="text/javascript" charset="utf-8"></script>  
+        <script type="text/javascript">  
+            window.onload=function (){  
+            /*实现：5个li分成5列，通过判断当前哪一个li高度最小，然后把div插入到那个li里面*/  
+                var oList=document.getElementById('list');  
+                var aLi=oList.getElementsByTagName('li');  
+                var flag=true;  
+                var json={  
+                   'data':[  
+                        {'src':'../photo/ke1.jpg'},{'src':'../photo/ke2.jpg'},{'src':'../photo/ke3.jpg'},  
+                       {'src':'../photo/ke4.jpg'},{'src':'../photo/ke5.jpg'},{'src':'../photo/ke6.jpg'},
+					   {'src':'../photo/ke7.jpg'},{'src':'../photo/ke8.jpg'},{'src':'../photo/ke9.jpg'},
+					   {'src':'../photo/ke10.jpg'},{'src':'../photo/ke11.jpg'},{'src':'../photo/ke12.jpg'},
+					   {'src':'../photo/ke13.jpg'},{'src':'../photo/ke14.jpg'},{'src':'../photo/ke15.jpg'},
+					   {'src':'../photo/ke16.jpg'},{'src':'../photo/ke17.jpg'},{'src':'../photo/ke18.jpg'},
+					   {'src':'../photo/ke19.jpg'},{'src':'../photo/ke20.jpg'},{'src':'../photo/ke21.jpg'},
+					   {'src':'../photo/ke22.jpg'},{'src':'../photo/ke23.jpg'},{'src':'../photo/ke24.jpg'},
+					   {'src':'../photo/ke25.jpg'},{'src':'../photo/ke26.jpg'},{'src':'../photo/ke27.jpg'},
+                        {'src':'../photo/ke28.jpg'},{'src':'../photo/ke29.jpg'},{'src':'../photo/ke30.jpg'} 
+                    ],  
+                }  
+                getLoad();  
+                function getLoad(){  
+                        for (var i=0;i<json.data.length;i++) {  
+                            var min=myMin();  
+                            var oDiv=document.createElement('div');  
+                            oDiv.className='div';  
+                            var oImg=document.createElement('img');  
+                            oImg.className='img';  
+                            oImg.src=json.data[i].src;  
+                            /*这里必须要设置高度，测试中发现js会把每一个节点、属性  
+                            创建好，然后再加载入图片，不设置一开始就不能比较li的高度*/  
+							oImg.style.height=Math.random()*200+150;  
+                            oDiv.appendChild(oImg);  
+                            //高度最小的li插入div  
+                            aLi[min].appendChild(oDiv);  
+                        }  
+                        flag=true;  
+                }  
+                //获取到当前li高度最小的索引  
+                function myMin(){  
+                    var index=0;  
+                    var min=aLi[index].offsetHeight;  
+                    for (var i=1;i<aLi.length;i++) {  
+                        if(aLi[i].offsetHeight<min){  
+                            index=i;  
+                            min=aLi[index].offsetHeight;  
+                        }  
+                    }  
+                    return index;  
+                }  
+                window.onscroll=function (){  
+                    var scroT=document.documentElement.scrollTop||document.body.scrollTop;  
+                    var clieH=document.documentElement.clientHeight||document.body.clientHeight;  
+                    var minN=myMin();  
+                    //这里判断加载是刚出现空白就加载，也就是滚动到了高度最小那一列完了  
+                    if((aLi[minN].offsetTop+aLi[minN].offsetHeight)<(scroT+clieH)){  
+                        if(flag){  
+                            flag=false;  
+                            getLoad();  
+                        }  
+                    }  
+                };  
+            };  
+        </script>  
+	</head>
+	<body>
+
+		<div class="header">
+			<div class="header-top">
+					<img src="../photo/dizhi.png">
+					<span id="s1">长春</span>
+					<span id="s2">[切换]</span>
+					<ul>
+						
+						<li><a href="html/dl.html">拍照测量</a></li>
+						<li><a href="html/zc.html">光照模拟</a></li>
+						<li><a href="html/zc.html">VR模拟</a></li>
+						<li><a href="html/dl.html">登录</a></li>
+						<li><a href="html/zc.html">注册</a></li>
+					</ul>
+			</div>
+			<div class="head-bottom">
+				<img src="../photo/logo.png"></img>
+				<span id="s22"><input type="text"></input></span>
+			</div>
+		<div class="nav">
+			<ul>
+				<li id="li1"><a href="../index.html" id="a1">首页</a></li>
+				<li><a href="../html/zizhusheji.html">自主设计</a></li>
+				<li><a href="../html/zhanshi.html">作品展示</a></li>
+				<li><a href="javascript:void(0)">施工监控</a></li>
+				<li><a href="../html/gaizao.html">旧物改造</a></li>
+				<li><a href="../html/baozhang.html">装修保障</a></li>
+	
+			</ul>
+		</div>
+		<div class="ce-nav">
+			
+			<ul>
+				<li class="li1">
+					<a href="javascript:void(0)">隐藏/展开</a>
+				</li>
+				<li class="li2">
+					<a href="javascript:void(0)">扫码关注</a>	
+				</li>
+				<li class="li3">
+					<a href="javascript:void(0)">联系我们</a>
+				</li>
+				<li class="li4">
+					<a href="#">疑问解答</a>
+				</li>
+				<li class="li5">
+					<a href="#">返回顶部</a>
+				</li>
+			</ul>
+		</div>
+		<div class="article">	
+			<ul id="list">
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+		<div class="footer">
+			<div class="fbleft">@2017梦想家</div>
+			<div class="back"><a href="">Back to top</a><span>↑</span>
+			</div>
+		</div>
+
+		
+		<script src="../js/jquery-3.2.0.min.js"></script>
+		<script type="text/javascript" src="../js/all.js"></script>
+	</body>
+</html>

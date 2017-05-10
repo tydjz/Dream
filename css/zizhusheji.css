@@ -1,0 +1,92 @@
+.zizhusheji{
+	background:linear-gradient(to right, #F9F9F9 , #D9F9F9);
+
+	width:1366px;
+	height:900px;
+	margin-left:-50px;
+	margin-right:-50px;
+	margin-top:39px;
+}
+.bj{
+	margin-left:50px;
+	margin-top:40px;
+	background:url("../photo/ke13.jpg") no-repeat;
+	background-size:100%;
+	width:900px;
+	height:700px;
+	float:left;
+}
+.zizhusheji ul{
+	float:left;
+	text-align:center;
+	margin-top:80px;
+	margin-left:60px;
+	width:120px;
+	background:#eee;
+}
+.zizhusheji h1{
+	float:left;
+	margin-left:500px;
+	padding-top:40px;
+}
+.zizhusheji p{
+	float:left;
+	width:160px;
+	margin-left:60px;
+	padding-top:100px;
+	text-indent:2em;
+}
+.zizhusheji ul li{
+	position:relative;
+	list-style:none;
+	width:100px;
+	height:40px;
+	background:#01AF63;
+	line-height:40px;
+	border-radius:20px;
+	cursor:pointer;
+	margin-bottom:50px;
+	margin-top:40px;
+	left:-10px;
+}
+.zizhusheji ul li a{
+	text-decoration:none;
+	color:#fff;
+}
+
+.footer{
+	float:left;
+	height:50px;
+	width:1366px;
+	background:#303030;
+	margin-left:-50px;
+	margin-right:-50px;
+	
+	line-height:50px;
+}
+.fbleft{
+	float: left;
+	margin-left: 100px;
+	color: #ffffff;
+	font-family: "微软雅黑";
+	font-size: 14px;
+}
+.back a{
+	position:relative;
+	float: right;
+	margin-right: 100px;
+	color: #ffffff;
+	font-family: "微软雅黑";
+	font-size: 14px;
+	text-decoration:none;
+	cursor:pointer;
+	top:0px;
+}
+.back span{
+	position:relative;
+	float: right;
+	color:#fff;
+	cursor:pointer;
+	top:-14px;
+	left:40px;
+}
